@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { SLICE_NAMES, VIEW_TYPES } from '../constants/constants'
 
-const listSlice = createSlice({
-  name: 'view',
+const viewSlice = createSlice({
+  name: SLICE_NAMES.VIEW,
   initialState: {
-    type: 'list'
+    type: VIEW_TYPES.LIST
   },
   reducers: {
     changeType(state, action) {
@@ -12,6 +13,6 @@ const listSlice = createSlice({
   },
 })
 
-export const { changeType } = listSlice.actions
+export const { changeType } = viewSlice.actions
 
-export default listSlice.reducer
+export default viewSlice.reducer

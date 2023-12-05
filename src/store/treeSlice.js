@@ -1,9 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createDataSlice } from './sharedSliceLogic'
+import fetchData from './api/api'
+import { SLICE_NAMES } from '../constants/constants'
 
-const treeSlice = createSlice({
-  name: 'tree',
-  initialState: {},
-  reducers: {},
-})
-
+const treeSlice = createDataSlice(SLICE_NAMES.TREE)
 export default treeSlice.reducer
+export const { deleteItem, refresh } = treeSlice.actions
+export { fetchData }

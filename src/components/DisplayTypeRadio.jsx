@@ -7,6 +7,7 @@ import {
 } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeType } from '../store/viewSlice'
+import { VIEW_TYPES } from '../constants/constants'
 
 const DisplayTypeRadio = () => {
   const dispatch = useDispatch()
@@ -20,12 +21,12 @@ const DisplayTypeRadio = () => {
         onChange={(e) => dispatch(changeType(e.target.value))}
       >
         <FormControlLabel
-          value="list"
+          value={VIEW_TYPES.LIST}
           label="List"
           control={<Radio />}
         ></FormControlLabel>
         <FormControlLabel
-          value="tree"
+          value={VIEW_TYPES.TREE}
           label="Tree"
           control={<Radio />}
         ></FormControlLabel>

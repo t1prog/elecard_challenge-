@@ -1,12 +1,9 @@
-body {
+body,
+html {
   margin: 0;
+  min-width: 700px;
 }
-
-.header {
-  .toolbar {
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo {
-  }
+.toolbar {
+  justify-content: space-between;
+  align-items: center;
 }
