@@ -17,8 +17,8 @@ export const VIEW_TYPES = {
 export const SLICE_NAMES = {
   TREE: 'tree',
   LIST: 'list',
-  VIEW: 'view'
+  VIEW: 'view',
+  PAGES: 'pages',
 }
 
-export const PATH_TO_IMG =
-  'http://contest.elecard.ru/frontend_data/' 
+export const PATH_TO_IMG = 'http://contest.elecard.ru/frontend_data/'

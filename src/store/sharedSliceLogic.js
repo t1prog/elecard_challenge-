@@ -22,16 +22,14 @@ export const createDataSlice = (name) => {
       refresh(state) {
         state.content = state.cache
         window.localStorage.removeItem(name)
+        state.status = null
       },
     },
     extraReducers: (builder) => {
       builder
-        .addMatcher(
-          (action) => action.type === fetchData.pending.type && getStorage,
-          (state) => {
-            state.status = STATUS.LOADING
-          }
-        )
+        .addCase(fetchData.pending.type, (state) => {
+          state.status = STATUS.LOADING
+        })
         .addMatcher(
           (action) => action.type === fetchData.fulfilled.type && !getStorage,
           (state, action) => {

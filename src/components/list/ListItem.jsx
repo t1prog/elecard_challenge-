@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
-import { deleteItem } from '../store/listSlice'
+import { deleteItem } from '../../store/listSlice'
 import { Card, CardMedia, CardContent, Grid, Typography } from '@mui/material'
-import { PATH_TO_IMG } from '../constants/constants'
+import { PATH_TO_IMG } from '../../constants/constants'
 const ListItem = ({ id, image, filesize, timestamp, category }) => {
   const dispatch = useDispatch()
   return (

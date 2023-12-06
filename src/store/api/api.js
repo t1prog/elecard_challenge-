@@ -13,6 +13,7 @@ const fetchData = createAsyncThunk(
       await new Promise((resolve) => setTimeout(resolve, 2000))
       
       const data = await response.json()
+      console.log('Pfghjc!')
       const dataWithIds = data.map((item, index) => ({
         ...item,
         //Чтобы избавиться от id = 0

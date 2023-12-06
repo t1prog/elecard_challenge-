@@ -1,13 +1,13 @@
 import { Container } from '@mui/material'
-import ListLike from './ListLike'
-import TreeLike from './TreeLike'
+import ListLike from './list/ListLike'
+import TreeLike from './tree/TreeLike'
 import { useSelector } from 'react-redux'
 import { VIEW_TYPES } from '../constants/constants'
 
 const Content = () => {
   const type = useSelector((state) => state.viewType.type)
   return (
-    <Container className="content">
+    <Container className="content" maxWidth="md" disableGutters={false}>
       {type === VIEW_TYPES.LIST ? <ListLike /> : <TreeLike />}
     </Container>
   )

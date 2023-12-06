@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchData } from '../store/treeSlice'
-import { STATUS } from '../constants/constants'
-import Error from './Error'
-import Loader from './Loader'
+import { fetchData } from '../../store/listSlice'
+import { STATUS } from '../../constants/constants'
+import Error from '../utils/Error'
+import Loader from '../utils/Loader'
+import Pagenal from '../utils/Pagenal'
 
-const TreeLike = () => {
+const ListLike = () => {
   const [reload, setReald] = useState(false)
   const { error, status } = useSelector((state) => state.listLike)
   const dispatch = useDispatch()
@@ -18,12 +19,13 @@ const TreeLike = () => {
   }, [dispatch, status, reload])
 
   return (
-    <div id="tree-like">
+    <>
       {error && <Error />}
-      Tree
-      {status === STATUS.LOADING && <Loader />}
-    </div>
+      <div id="list-like" style={{ paddingTop: 20 }}>
+        {status === STATUS.LOADING ? <Loader /> : <Pagenal />}
+      </div>
+    </>
   )
 }
 
-export default TreeLike
+export default ListLike
