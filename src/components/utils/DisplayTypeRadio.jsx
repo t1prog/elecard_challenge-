@@ -12,14 +12,15 @@ import { VIEW_TYPES } from '../../constants/constants'
 const DisplayTypeRadio = () => {
   const dispatch = useDispatch()
   const type = useSelector((state) => state.viewType.type)
+
+  const handleTypeChange = (e) => {
+    dispatch(changeType(e.target.value))
+  }
+
   return (
     <FormControl>
       <FormLabel>View</FormLabel>
-      <RadioGroup
-        row
-        value={type}
-        onChange={(e) => dispatch(changeType(e.target.value))}
-      >
+      <RadioGroup row value={type} onChange={handleTypeChange}>
         <FormControlLabel
           value={VIEW_TYPES.LIST}
           label="List"

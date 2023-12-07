@@ -1,27 +1,21 @@
-import * as React from 'react'
+import React from 'react'
+import { Dialog, DialogContent } from '@mui/material'
 
-import { Dialog } from '@mui/material'
-
-export default function AlertDialog() {
-  const [open, setOpen] = React.useState(false)
-
-  const handleClickOpen = () => {
-    setOpen(true)
-  }
-
-  const handleClose = () => {
-    setOpen(false)
-  }
-
+export default function Modal({ openModal, image, handleClose }) {
   return (
-    <React.Fragment>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        onClick={handleClickOpen}
-      ></Dialog>
-    </React.Fragment>
+    <Dialog
+      open={openModal}
+      onClose={handleClose}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogContent>
+        <img
+          src={image}
+          alt=""
+          style={{ width: '100%', height: 'auto', maxWidth: '100%' }}
+        />
+      </DialogContent>
+    </Dialog>
   )
 }

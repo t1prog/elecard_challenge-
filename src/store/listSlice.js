@@ -52,7 +52,7 @@ const listSlice = createSlice({
         }
       )
       .addMatcher(
-        (action) => action.type === fetchData.fulfilled.type && storage,
+        (action) => action.type === fetchData.pending.type && storage,
         (state) => {
           state.status = STATUS.RESOLVED
           state.content = storage

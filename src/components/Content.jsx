@@ -7,7 +7,12 @@ import { VIEW_TYPES } from '../constants/constants'
 const Content = () => {
   const type = useSelector((state) => state.viewType.type)
   return (
-    <Container className="content" maxWidth="md" disableGutters={false} sx={{minHeight:'90vh'}}>
+    <Container
+      className="content"
+      maxWidth="md"
+      disableGutters={false}
+      sx={{ paddingTop: 8 }}
+    >
       {type === VIEW_TYPES.LIST ? <ListLike /> : <TreeLike />}
     </Container>
   )

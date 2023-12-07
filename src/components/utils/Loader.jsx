@@ -1,9 +1,16 @@
+import React from 'react'
 import { Box, CircularProgress } from '@mui/material'
 
 const Loader = () => {
-  //Todo: убрать inline стили
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '10px', paddingTop: '50px'}}>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        paddingBottom: 2,
+        paddingTop: 50,
+      }}
+    >
       <CircularProgress />
     </Box>
   )

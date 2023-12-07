@@ -1,23 +1,30 @@
-import { Box } from '@mui/material'
+import React from 'react'
+import { Box, Typography } from '@mui/material'
 import { useSelector } from 'react-redux'
 
 const Error = () => {
   const errorMessage = useSelector((state) => state.listLike.error)
-  //TODO: Убрать inline стили
+
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: 'flex',
         justifyContent: 'center',
         position: 'sticky',
         width: '100%',
       }}
     >
-      <Box sx={{ justifyContent: 'center', position: 'fixed' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          position: 'fixed',
+        }}
+      >
         <div
           style={{
             textAlign: 'center',
-            border: 'solid 0.4px white',
+            border: 'solid 1px white',
             borderRadius: '5px',
             color: 'white',
             backgroundColor: '#d32f2f',
@@ -27,10 +34,15 @@ const Error = () => {
             cursor: 'default',
           }}
         >
-          {errorMessage}
+          <Typography
+            variant="body1"
+            sx={{ color: 'white', fontSize: 18, cursor: 'default' }}
+          >
+            {errorMessage}
+          </Typography>
         </div>
       </Box>
-    </div>
+    </Box>
   )
 }
 

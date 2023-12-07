@@ -4,7 +4,7 @@ import { fetchData } from '../../store/treeSlice'
 import { STATUS } from '../../constants/constants'
 import Error from '../utils/Error'
 import Loader from '../utils/Loader'
-import TreeConctructor from './TreeConctructor'
+import TreeRoot from './TreeRoot'
 
 const ListLike = () => {
   const { error, status } = useSelector((state) => state.treeLike)
@@ -20,11 +20,14 @@ const ListLike = () => {
   return (
     <>
       {error && <Error />}
-      <div id="tree-like" style={{ paddingTop: 20, minHeight: '100%' }}>
+      <div
+        id="tree-like"
+        style={{ paddingTop: 20, minHeight: '100%', paddingBottom: 50 }}
+      >
         {status === STATUS.LOADING ? (
           <Loader />
         ) : (
-          <TreeConctructor content={content} />
+          <TreeRoot content={content} />
         )}
       </div>
     </>

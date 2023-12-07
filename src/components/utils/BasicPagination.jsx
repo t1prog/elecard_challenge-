@@ -1,6 +1,6 @@
 import { Pagination, Stack } from '@mui/material'
-import { setPageNum } from '../../store/pagesSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { setPageNum } from '../../store/pagesSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function BasicPagination({ totalPages }) {
   //забиндить в localstorage
@@ -16,8 +16,7 @@ export default function BasicPagination({ totalPages }) {
       justifyContent={'center'}
       alignItems={'center'}
       paddingTop={5}
-      paddingBottom={3}
-      height={'100%'}
+      paddingBottom={10}
     >
       <Pagination
         count={totalPages}

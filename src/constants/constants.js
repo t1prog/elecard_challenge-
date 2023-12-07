@@ -19,7 +19,7 @@ export const SLICE_NAMES = {
   LIST: 'list',
   VIEW: 'view',
   PAGES: 'pages',
-  LS: 'localStorage'
+  LS: 'localStorage',
 }
 
 export const SORT_BY = {
@@ -30,7 +30,7 @@ export const SORT_BY = {
 
 export const SORT_DIRECTION = {
   ASC: 'asc',
-  DESC: 'desc'
+  DESC: 'desc',
 }
 
 export const PATH_TO_IMG = 'http://contest.elecard.ru/frontend_data/'
