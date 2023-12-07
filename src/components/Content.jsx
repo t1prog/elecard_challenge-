@@ -3,9 +3,11 @@ import ListLike from './list/ListLike'
 import TreeLike from './tree/TreeLike'
 import { useSelector } from 'react-redux'
 import { VIEW_TYPES } from '../constants/constants'
+import { useEffect } from 'react'
 
 const Content = () => {
   const type = useSelector((state) => state.viewType.type)
+  useEffect(() => console.log('Elecard CW Challenge'), [])
   return (
     <Container
       className="content"
