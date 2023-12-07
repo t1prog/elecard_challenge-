@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@mui/material'
-import DisplayTypeRadio from './DisplayTypeRadio'
-import ResetAllButton from './utils/ResetAllButton'
+import DisplayTypeRadio from './utils/DisplayTypeRadio'
+import ClearStorage from './utils/ClearStorage'
 
 const Header = () => {
   return (
@@ -10,11 +10,10 @@ const Header = () => {
           Challenge CW 2023
         </Typography>
         <DisplayTypeRadio />
-        <ResetAllButton />
+        <ClearStorage />
       </Toolbar>
     </AppBar>
   )
 }
 
 export default Header
-

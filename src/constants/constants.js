@@ -19,6 +19,18 @@ export const SLICE_NAMES = {
   LIST: 'list',
   VIEW: 'view',
   PAGES: 'pages',
+  LS: 'localStorage'
+}
+
+export const SORT_BY = {
+  FILESIZE: 'filesize',
+  DATE: 'timestamp',
+  CATEGORY: 'category',
+}
+
+export const SORT_DIRECTION = {
+  ASC: 'asc',
+  DESC: 'desc'
 }
 
 export const PATH_TO_IMG = 'http://contest.elecard.ru/frontend_data/'

@@ -6,8 +6,8 @@ import {
   Radio,
 } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeType } from '../store/viewSlice'
-import { VIEW_TYPES } from '../constants/constants'
+import { changeType } from '../../store/viewSlice'
+import { VIEW_TYPES } from '../../constants/constants'
 
 const DisplayTypeRadio = () => {
   const dispatch = useDispatch()

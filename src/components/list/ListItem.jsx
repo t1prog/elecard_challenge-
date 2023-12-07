@@ -2,14 +2,18 @@ import { useDispatch } from 'react-redux'
 import { deleteItem } from '../../store/listSlice'
 import { Card, CardMedia, CardContent, Grid, Typography } from '@mui/material'
 import { PATH_TO_IMG } from '../../constants/constants'
+import useDateTime from '../../hooks/useDateTime'
+
 const ListItem = ({ id, image, filesize, timestamp, category }) => {
   const dispatch = useDispatch()
+
+  
+
   return (
-    <Card sx={{ maxWidth: 270 }}>
+    <Card sx={{ minWidth: 275 }}>
       <CardMedia
         sx={{ height: 180 }}
-        image={PATH_TO_IMG + image}
-        title={PATH_TO_IMG + image}
+        image={image ? PATH_TO_IMG + image : ''}
       />
       <CardContent>
         <Grid container spacing={1}>
@@ -18,10 +22,10 @@ const ListItem = ({ id, image, filesize, timestamp, category }) => {
               Category: {category}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Timestamp: {timestamp}
+              Date: {useDateTime(timestamp)}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Filesize: {filesize}
+              Filesize: {(filesize / 1024).toFixed(2)} MB
             </Typography>
           </Grid>
           <Grid

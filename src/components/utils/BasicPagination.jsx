@@ -17,6 +17,7 @@ export default function BasicPagination({ totalPages }) {
       alignItems={'center'}
       paddingTop={5}
       paddingBottom={3}
+      height={'100%'}
     >
       <Pagination
         count={totalPages}
