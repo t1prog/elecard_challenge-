@@ -5,6 +5,7 @@ import { STATUS } from '../../constants/constants'
 import Error from '../utils/Error'
 import Loader from '../utils/Loader'
 import ListConstructor from './ListConstructor'
+import '../../style/components/listLike.scss'
 
 const ListLike = () => {
   const { error, status } = useSelector((state) => state.listLike)
@@ -20,7 +21,7 @@ const ListLike = () => {
   return (
     <>
       {error && <Error />}
-      <div id="list-like" style={{ paddingTop: 20, minHeight: '100%' }}>
+      <div id="list-like" className="list-like-container">
         {status === STATUS.LOADING ? (
           <Loader />
         ) : (

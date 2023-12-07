@@ -1,0 +1,14 @@
+.sort-radio-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort-radio-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-radio-label {
+  margin-bottom: 8px;
+}

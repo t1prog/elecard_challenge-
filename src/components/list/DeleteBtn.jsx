@@ -1,22 +1,12 @@
+// DeleteBtn.jsx
 import React from 'react'
 import { Grid } from '@mui/material'
+import '../../style/components/deleteBtn.scss'
 
 const DeleteBtn = ({ handleDelete }) => {
   return (
-    <Grid
-      item
-      container
-      md={2}
-      xs={2}
-      fontSize={20}
-      justifyContent="center"
-      alignItems="center"
-    >
-      <span
-        className="delete"
-        style={{ cursor: 'pointer' }}
-        onClick={handleDelete}
-      >
+    <Grid item container md={2} xs={2} className="delete-btn">
+      <span className="delete" onClick={handleDelete}>
         &#10006;
       </span>
     </Grid>

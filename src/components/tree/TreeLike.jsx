@@ -1,10 +1,12 @@
-import { useEffect } from 'react'
+// TreeRoot.jsx
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchData } from '../../store/treeSlice'
 import { STATUS } from '../../constants/constants'
 import Error from '../utils/Error'
 import Loader from '../utils/Loader'
 import TreeRoot from './TreeRoot'
+import '../../style/components/treeLike.scss'
 
 const ListLike = () => {
   const { error, status } = useSelector((state) => state.treeLike)
@@ -20,10 +22,7 @@ const ListLike = () => {
   return (
     <>
       {error && <Error />}
-      <div
-        id="tree-like"
-        style={{ paddingTop: 20, minHeight: '100%', paddingBottom: 50 }}
-      >
+      <div id="tree-like" className="tree-root-container">
         {status === STATUS.LOADING ? (
           <Loader />
         ) : (

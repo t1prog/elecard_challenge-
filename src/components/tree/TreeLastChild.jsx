@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import '../../style/index.scss'
 
 const TreeLastChild = ({ label, content }) => {
   const [isExpanded, setIsExpanded] = useState(false)

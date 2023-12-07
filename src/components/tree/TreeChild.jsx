@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import TreeGrandChild from './TreeGrandChild'
-import '../../style/index.scss'
 
 const TreeChild = ({ ...props }) => {
   const [isExpanded, setIsExpanded] = useState(false)

@@ -1,6 +1,5 @@
 import React from 'react'
 import TreeLastChild from './TreeLastChild'
-import '../../style/index.scss'
 
 const TreeGrandChild = ({ image, filesize, timestamp, category }) => {
   return (

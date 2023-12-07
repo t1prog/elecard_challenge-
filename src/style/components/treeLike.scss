@@ -1,0 +1,44 @@
+.tree-root {
+  &-container {
+    padding-top: 20px;
+    min-height: 100%;
+    padding-bottom: 50px;
+  }
+  &__item {
+    list-style-type: none;
+    padding-left: 20px; // отступ для поддержания иерархии
+  }
+
+  &__item-label {
+    cursor: pointer;
+    margin-bottom: 5px; // добавим небольшой отступ между элементами
+  }
+
+  &__child {
+    list-style-type: none;
+  }
+
+  &__child-item {
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+
+  &__grandchild {
+    list-style-type: none;
+    margin-left: 20px; // отступ для поддержания иерархии
+  }
+
+  &__lastchild {
+    list-style-type: none;
+  }
+
+  &__lastchild-item {
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+
+  &__lastchild-value {
+    list-style-type: none;
+    margin-left: 20px;
+  }
+}

@@ -1,5 +1,5 @@
-import React from 'react'
 import { Dialog, DialogContent } from '@mui/material'
+import '../../style/components/modal.scss'
 
 export default function Modal({ openModal, image, handleClose }) {
   return (
@@ -9,12 +9,8 @@ export default function Modal({ openModal, image, handleClose }) {
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
-      <DialogContent>
-        <img
-          src={image}
-          alt=""
-          style={{ width: '100%', height: 'auto', maxWidth: '100%' }}
-        />
+      <DialogContent className="modal-content">
+        <img src={image} alt="" />
       </DialogContent>
     </Dialog>
   )

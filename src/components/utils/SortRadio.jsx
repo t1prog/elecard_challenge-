@@ -1,3 +1,5 @@
+// SortRadio.jsx
+import React, { useState } from 'react'
 import {
   FormControl,
   FormControlLabel,
@@ -8,7 +10,7 @@ import {
 } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { SORT_DIRECTION, SORT_BY } from '../../constants/constants'
-import { useState } from 'react'
+import '../../style/components/sortRadio.scss'
 
 const SortRadio = ({ ...props }) => {
   const dispatch = useDispatch()
@@ -18,7 +20,7 @@ const SortRadio = ({ ...props }) => {
   })
 
   const handleChange = (event) => {
-    if (event.target.checked===true) {
+    if (event.target.checked === true) {
       dispatch(props.toggleSortDirection(SORT_DIRECTION.DESC))
     } else {
       dispatch(props.toggleSortDirection(SORT_DIRECTION.ASC))
@@ -27,9 +29,9 @@ const SortRadio = ({ ...props }) => {
   }
 
   return (
-    <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-      <FormControl>
-        <FormLabel>Sort by</FormLabel>
+    <div className="sort-radio-container">
+      <FormControl className="sort-radio-form">
+        <FormLabel className="sort-radio-label">Sort by</FormLabel>
         <RadioGroup
           row
           value={props.sortBy}
@@ -53,7 +55,7 @@ const SortRadio = ({ ...props }) => {
         </RadioGroup>
       </FormControl>
       <FormControl>
-        <FormLabel>Ascending?</FormLabel>
+        <FormLabel className="sort-radio-label">Ascending?</FormLabel>
         <Switch checked={checked} onChange={handleChange} />
       </FormControl>
     </div>
