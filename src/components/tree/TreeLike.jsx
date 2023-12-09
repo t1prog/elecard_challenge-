@@ -5,7 +5,6 @@ import { STATUS } from '../../constants/constants'
 import Error from '../utils/Error'
 import Loader from '../utils/Loader'
 import TreeRoot from './TreeRoot'
-import '../../style/components/treeLike.scss'
 
 const ListLike = () => {
   const { error, status } = useSelector((state) => state.treeLike)
@@ -21,6 +20,7 @@ const ListLike = () => {
   return (
     <>
       {error && <Error />}
+      
       <div id="tree-like" className="tree-root-container">
         {status === STATUS.LOADING ? (
           <Loader />

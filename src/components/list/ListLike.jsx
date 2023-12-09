@@ -5,7 +5,6 @@ import { STATUS } from '../../constants/constants'
 import Error from '../utils/Error'
 import Loader from '../utils/Loader'
 import ListConstructor from './ListConstructor'
-import '../../style/components/listLike.scss'
 
 const ListLike = () => {
   const { error, status } = useSelector((state) => state.listLike)

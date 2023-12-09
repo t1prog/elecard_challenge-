@@ -6,12 +6,12 @@
   }
   &__item {
     list-style-type: none;
-    padding-left: 20px; // отступ для поддержания иерархии
+    padding-left: 20px;
   }
 
   &__item-label {
     cursor: pointer;
-    margin-bottom: 5px; // добавим небольшой отступ между элементами
+    margin-bottom: 5px;
   }
 
   &__child {
@@ -25,7 +25,7 @@
 
   &__grandchild {
     list-style-type: none;
-    margin-left: 20px; // отступ для поддержания иерархии
+    margin-left: 20px;
   }
 
   &__lastchild {

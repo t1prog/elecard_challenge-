@@ -9,7 +9,6 @@ import {
 } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { SORT_DIRECTION, SORT_BY } from '../../constants/constants'
-import '../../style/components/sortRadio.scss'
 
 const SortRadio = ({ ...props }) => {
   const dispatch = useDispatch()
