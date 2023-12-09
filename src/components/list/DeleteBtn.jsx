@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid } from '@mui/material'
-import '../../style/components/deleteBtn.scss'
 
 const DeleteBtn = ({ handleDelete }) => {
   return (

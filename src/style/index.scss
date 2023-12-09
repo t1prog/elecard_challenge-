@@ -1,10 +1,15 @@
+@import './components/deleteBtn';
+@import './components/error';
+@import './components/header';
+@import './components/listLike';
+@import './components/modal';
+@import './components/sortRadio';
+@import './components/treeLike';
+
 body,
 html {
   margin: 0;
-  min-width: 600px;
-}
-
-.toolbar {
-  justify-content: space-between;
-  align-items: center;
+  min-width: 599px;
+  overflow-x: hidden;
+  
 }

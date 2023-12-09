@@ -4,13 +4,13 @@ import ClearStorage from './utils/ClearStorage'
 
 const Header = () => {
   return (
-    <AppBar
-      className="header"
-      position="fixed"
-      color="inherit"
-    >
-      <Toolbar className="toolbar">
-        <Typography className="logo" variant="h6" component="div">
+    <AppBar className="header" position="fixed" color="inherit">
+      <Toolbar className="header__toolbar">
+        <Typography
+          className="header__logo"
+          variant="h6"
+          component="div"
+        >
           Challenge CW 2023
         </Typography>
         <DisplayTypeRadio />

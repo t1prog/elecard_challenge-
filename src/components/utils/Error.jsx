@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { useSelector } from 'react-redux'
-import '../../style/components/error.scss'
 
 const Error = () => {
   const errorMessage = useSelector((state) => state.listLike.error)
