@@ -1,0 +1,19 @@
+import { AppBar, Toolbar, Typography } from '@mui/material'
+import DisplayTypeRadio from './utils/DisplayTypeRadio'
+import ClearStorage from './utils/ClearStorageButton'
+
+const Header = () => {
+  return (
+    <AppBar className="header" position="fixed" color="inherit">
+      <Toolbar className="header__toolbar">
+        <Typography className="header__logo" variant="h6" component="div">
+          Challenge CW 2023
+        </Typography>
+        <DisplayTypeRadio />
+        <ClearStorage />
+      </Toolbar>
+    </AppBar>
+  )
+}
+
+export default Header

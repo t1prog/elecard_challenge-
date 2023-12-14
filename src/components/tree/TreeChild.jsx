@@ -24,4 +24,3 @@ const TreeChild = ({ ...props }) => {
 }
 
 export default TreeChild
-

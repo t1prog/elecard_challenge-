@@ -1,0 +1,24 @@
+.error-container {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  width: 100%;
+}
+
+.error-box {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+}
+
+.error-message {
+  text-align: center;
+  border: solid 1px white;
+  border-radius: 5px;
+  color: white;
+  background-color: #d32f2f;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 57.4px;
+  cursor: default;
+}

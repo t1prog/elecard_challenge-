@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 const TreeLastChild = ({ label, content }) => {
   const [isExpanded, setIsExpanded] = useState(false)

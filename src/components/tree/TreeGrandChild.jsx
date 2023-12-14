@@ -1,4 +1,3 @@
-import React from 'react'
 import TreeLastChild from './TreeLastChild'
 
 const TreeGrandChild = ({ image, filesize, timestamp, category }) => {

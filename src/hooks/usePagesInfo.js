@@ -1,11 +1,11 @@
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
-import useSorter from './useSorter'
+import useSorter from './useSort'
 
 const usePagesInfo = (content, sortBy, sortDirection) => {
-  const { pageNum, limitPerPage } = useSelector((state) => state.pages)
+  const { pageNum, limitPerPage } = useSelector((state) => state.page)
   const { result } = useSorter(content, sortBy, sortDirection)
-  
+
   const pageInfo = useMemo(() => {
     const startIndex = (pageNum - 1) * limitPerPage
     const endIndex = startIndex + limitPerPage

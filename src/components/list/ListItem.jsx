@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { deleteItem } from '../../store/listSlice'
+import { deleteItem } from '../../store/list/list.slice'
 import { Card, CardMedia, CardContent, Grid } from '@mui/material'
-import { PATH_TO_IMG } from '../../constants/constants'
-import Modal from '../utils/Modal'
+import { PATH_TO_IMG } from '../../services/constants'
+import  ListModal  from './utils/ListModal'
 import ListItemDesc from './ListItemDesc'
-import DeleteBtn from './DeleteBtn'
+import DeleteBtn from '../shared/DeleteBtn'
 
 const ListItem = ({ id, image, filesize, timestamp, category }) => {
   const dispatch = useDispatch()
@@ -42,7 +42,7 @@ const ListItem = ({ id, image, filesize, timestamp, category }) => {
           </Grid>
         </CardContent>
       </div>
-      <Modal
+      <ListModal
         openModal={openModal}
         image={PATH_TO_IMG + image}
         handleClose={modalCloseHandle}
