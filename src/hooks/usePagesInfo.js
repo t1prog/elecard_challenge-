@@ -11,7 +11,11 @@ const usePagesInfo = (content, sortBy, sortDirection) => {
     const endIndex = startIndex + limitPerPage
     const displayedContent = result.slice(startIndex, endIndex)
     const totalPages = Math.ceil(content.length / limitPerPage)
-    return { displayedContent, totalPages, pageNum }
+    return {
+      displayedContent,
+      totalPages,
+      pageNum,
+    }
   }, [content, limitPerPage, pageNum, result])
 
   return pageInfo

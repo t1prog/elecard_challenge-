@@ -10,9 +10,9 @@ export const apiServer = {
     }
     if (!apiCache.data) {
       apiCache.data = await response.json()
-      await new Promise((resolve) => setTimeout(resolve, 1000))
       apiCache.data = apiCache.data.map((item, index) => ({
         ...item,
+        filename: item.image.split('/')[1].split('.')[0],
         id: index + 1,
       }))
     }

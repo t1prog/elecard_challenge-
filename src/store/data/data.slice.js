@@ -19,16 +19,14 @@ const dataSlice = createSlice({
         state.error = action.payload
       })
       .addMatcher(
-        (action) =>
-          action.type === fetchData.pending.type,
+        (action) => action.type === fetchData.pending.type,
         (state) => {
           state.status = STATUS.LOADING
           state.content = storedValues
         }
       )
       .addMatcher(
-        (action) =>
-          action.type === fetchData.fulfilled.type && storedValues.error,
+        (action) => action.type === fetchData.fulfilled.type && storedValues.error,
         (state, action) => {
           state.status = STATUS.RESOLVED
           state.content = action.payload

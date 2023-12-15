@@ -1,4 +1,4 @@
-import { apiServer } from "../services/api/api.service"
+import { apiServer } from '../services/api/api.service'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchData = createAsyncThunk(

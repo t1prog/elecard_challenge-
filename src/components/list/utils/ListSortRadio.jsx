@@ -12,16 +12,12 @@ import { SORT_DIRECTION, SORT_BY } from '../../../services/constants'
 
 const ListSortRadio = ({ ...props }) => {
   const dispatch = useDispatch()
-  const [checked, setChecked] = useState(
-    props.sortDirection === SORT_DIRECTION.DESC
-  )
+  const [checked, setChecked] = useState(props.sortDirection === SORT_DIRECTION.DESC)
 
   const handleChange = (event) => {
     const isChecked = event.target.checked
     dispatch(
-      props.toggleSortDirection(
-        isChecked ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC
-      )
+      props.toggleSortDirection(isChecked ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC)
     )
     setChecked(isChecked)
   }
@@ -48,6 +44,11 @@ const ListSortRadio = ({ ...props }) => {
           <FormControlLabel
             value={SORT_BY.FILESIZE}
             label="File size"
+            control={<Radio />}
+          ></FormControlLabel>
+          <FormControlLabel
+            value={SORT_BY.FILENAME}
+            label="Name"
             control={<Radio />}
           ></FormControlLabel>
         </RadioGroup>

@@ -1,7 +1,10 @@
-.modal-content {
-  img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
+.modal {
+  cursor: zoom-out;
+  &-content {
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
   }
 }

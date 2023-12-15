@@ -1,4 +1,19 @@
 .list-like-container {
-  padding-top: 20px;
-  min-height: 100%;
+  padding-top: 10px;
+}
+
+.list-item {
+  position: relative;
+  &__image-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    img {
+      width: 100%;
+      height: 190px;
+      border-radius: 5px;
+      cursor: zoom-in;
+    }
+  }
 }

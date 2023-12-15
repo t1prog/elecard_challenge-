@@ -24,7 +24,9 @@ export const localStorage = {
         const serializedValue =
           typeof value === 'object' ? JSON.stringify(value) : value
         window.localStorage.setItem(key, serializedValue)
-        resolve({ success: true })
+        resolve({
+          success: true,
+        })
       } catch (error) {
         reject(error)
       }
@@ -35,7 +37,9 @@ export const localStorage = {
     return new Promise((resolve, reject) => {
       try {
         window.localStorage.removeItem(key)
-        resolve({ success: true })
+        resolve({
+          success: true,
+        })
       } catch (error) {
         reject(error)
       }
@@ -46,7 +50,9 @@ export const localStorage = {
     return new Promise((resolve, reject) => {
       try {
         window.localStorage.clear()
-        resolve({ success: true })
+        resolve({
+          success: true,
+        })
       } catch (error) {
         reject(error)
       }

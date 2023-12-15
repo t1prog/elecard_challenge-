@@ -1,7 +1,6 @@
 import { Box, Typography } from '@mui/material'
 
-const Error = ({message}) => {
-
+const Error = ({ message }) => {
   return (
     <Box className="error-container">
       <Box className="error-box">

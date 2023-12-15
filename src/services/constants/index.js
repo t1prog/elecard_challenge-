@@ -28,6 +28,7 @@ export const SORT_BY = {
   FILESIZE: 'filesize',
   DATE: 'timestamp',
   CATEGORY: 'category',
+  FILENAME: 'image',
 }
 
 export const SORT_DIRECTION = {

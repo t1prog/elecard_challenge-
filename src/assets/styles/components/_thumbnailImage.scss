@@ -1,0 +1,22 @@
+.thumbnail {
+  display: flex;
+  position: absolute;
+  right: -40%;
+  top: -150%;
+  &-item {
+    cursor: zoom-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #c2c2c2;
+    background-color: #ddd;
+    transition: transform 0.3s ease-in-out;
+    img {
+      max-width: 150px;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -3,9 +3,10 @@ import TreeRoot from './TreeRoot'
 
 const Tree = () => {
   const content = useSelector((state) => state.tree.content)
+  const categories = [...new Set(content.map((item) => item.category))]
   return (
-    <div id="tree-like" className="tree-root-container">
-      <TreeRoot content={content} />
+    <div className="tree-root-container">
+      <TreeRoot content={content} categories={categories} />
     </div>
   )
 }

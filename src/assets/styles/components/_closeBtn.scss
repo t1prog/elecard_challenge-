@@ -1,0 +1,21 @@
+.close-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeedec;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  &__no-background {
+    @extend .close-btn;
+    background-color: transparent;
+  }
+}
+
+.close {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 0, 0, 0.698);
+}

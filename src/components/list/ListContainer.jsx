@@ -1,8 +1,8 @@
 import { Grid } from '@mui/material'
 import ListItem from './ListItem'
 import { useSelector } from 'react-redux'
-import  ListPagination  from './utils/ListPagination'
-import  ListSortRadio  from './utils/ListSortRadio'
+import ListPagination from './utils/ListPagination'
+import ListSortRadio from './utils/ListSortRadio'
 import usePagesInfo from '../../hooks/usePagesInfo'
 import { toggleSortDirection, changeSortBy } from '../../store/list/list.slice'
 

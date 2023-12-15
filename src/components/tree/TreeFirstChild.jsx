@@ -1,7 +1,7 @@
-import TreeFirstChild from './TreeFirstChild'
 import { useState } from 'react'
+import TreeGrandChild from './TreeGrandChild'
 
-const TreeRoot = ({ content, categories }) => {
+const TreeFirstChild = ({ content, category }) => {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const expandedHandle = () => {
@@ -9,21 +9,24 @@ const TreeRoot = ({ content, categories }) => {
   }
 
   return (
-    <div>
+    <li className="tree-root__child-item">
       <div className={`tree-root__label ${isExpanded ? 'expanded' : ''}`}>
         <span className="tree-root__toggler" onClick={expandedHandle}>
-          {isExpanded ? '▼' : '►'} Root
+          {isExpanded ? '▼' : '►'} {category}
         </span>
       </div>
       {isExpanded && (
         <ul className="tree-root__child">
-          {categories.map((category) => (
-            <TreeFirstChild key={category} content={content} category={category} />
-          ))}
+          {content.map(
+            (item) =>
+              item.category === category && (
+                <TreeGrandChild key={item.id} filename={item.filename} item={item} />
+              )
+          )}
         </ul>
       )}
-    </div>
+    </li>
   )
 }
 
-export default TreeRoot
+export default TreeFirstChild

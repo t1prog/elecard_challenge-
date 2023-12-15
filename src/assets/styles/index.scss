@@ -1,4 +1,4 @@
-@import './components/deleteBtn';
+@import './components/closeBtn';
 @import './components/error';
 @import './components/header';
 @import './components/listLike';
@@ -7,10 +7,14 @@
 @import './components/treeLike';
 @import './components/loader';
 @import './components/mainPage';
+@import './components/thumbnailImage';
 
 body,
 html {
   margin: 0;
   min-width: 599px;
   overflow-x: hidden;
+}
+.no-scroll {
+  overflow: hidden;
 }

@@ -1,13 +1,26 @@
-import TreeLastChild from './TreeLastChild'
+import { useState } from 'react'
+import TreeValue from './TreeValue'
 
-const TreeGrandChild = ({ image, filesize, timestamp, category }) => {
+const TreeGrandChild = ({ filename, item }) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  const expandedHandle = () => {
+    setIsExpanded((prev) => !prev)
+  }
+
   return (
-    <ul className="tree-root__grandchild">
-      <TreeLastChild label="image" content={image} />
-      <TreeLastChild label="filesize" content={filesize} />
-      <TreeLastChild label="timestamp" content={timestamp} />
-      <TreeLastChild label="category" content={category} />
-    </ul>
+    <li className="tree-root__grandchild">
+      <div className={`tree-root__label ${isExpanded ? 'expanded' : ''}`}>
+        <span className="tree-root__toggler" onClick={expandedHandle}>
+          {isExpanded ? '▼' : '►'} {filename}
+        </span>
+      </div>
+      {isExpanded && (
+        <ul className="tree-root__child">
+          <TreeValue item={item} />
+        </ul>
+      )}
+    </li>
   )
 }
 

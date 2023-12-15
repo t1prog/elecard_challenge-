@@ -2,6 +2,8 @@ import { SORT_BY, SORT_DIRECTION } from '../services/constants'
 
 const compareByProperty = (a, b, property) => {
   switch (property) {
+    case SORT_BY.FILENAME:
+      return a.filename.localeCompare(b.filename)
     case SORT_BY.DATE:
       return a.timestamp - b.timestamp
     case SORT_BY.FILESIZE:
@@ -21,7 +23,9 @@ const useSorter = (content, sortBy, sortDirection) => {
     result = [...content].sort((a, b) => compareByProperty(a, b, sortBy))
   }
 
-  return { result }
+  return {
+    result,
+  }
 }
 
 export default useSorter
