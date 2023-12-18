@@ -5,6 +5,7 @@ import ListPagination from './utils/ListPagination'
 import ListSortRadio from './utils/ListSortRadio'
 import usePagesInfo from '../../hooks/usePagesInfo'
 import { toggleSortDirection, changeSortBy } from '../../store/list/list.slice'
+import ModalWindow from '../shared/ModalWindow'
 
 const ListContainer = ({ content }) => {
   const { sortBy, sortDirection } = useSelector((state) => state.list)
@@ -23,7 +24,7 @@ const ListContainer = ({ content }) => {
         changeSortBy={changeSortBy}
       />
       <Grid container rowGap={3}>
-        {displayedContent.map((item) => (
+        {displayedContent.map((item, index) => (
           <Grid
             key={item.id}
             item
@@ -32,11 +33,12 @@ const ListContainer = ({ content }) => {
             display={'flex'}
             justifyContent={'center'}
           >
-            <ListItem {...item} />
+            <ListItem {...item} imgId={index} />
           </Grid>
         ))}
       </Grid>
       <ListPagination totalPages={totalPages} />
+      <ModalWindow images={displayedContent.map((item) => item.image)} />
     </div>
   )
 }

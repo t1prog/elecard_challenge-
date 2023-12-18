@@ -15,7 +15,11 @@ const compareByProperty = (a, b, property) => {
   }
 }
 
-const useSorter = (content, sortBy, sortDirection) => {
+const useSorter = (
+  content,
+  sortBy = SORT_BY.DATE,
+  sortDirection = SORT_DIRECTION.ASC
+) => {
   let result
   if (sortDirection === SORT_DIRECTION.DESC) {
     result = [...content].sort((a, b) => compareByProperty(b, a, sortBy))

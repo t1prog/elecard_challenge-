@@ -16,6 +16,7 @@ export const VIEW_TYPES = {
 }
 
 export const SLICE_NAMES = {
+  MODAL: 'modal',
   TREE: 'tree',
   LIST: 'list',
   VIEW: 'view',

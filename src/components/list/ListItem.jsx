@@ -1,63 +1,40 @@
-import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteItem } from '../../store/list/list.slice'
 import { Card, CardContent, Grid } from '@mui/material'
 import { PATH_TO_IMG } from '../../services/constants'
-import ModalWindow from '../shared/ModalWindow'
 import ListItemDesc from './ListItemDesc'
 import CloseBtn from '../shared/CloseBtn'
+import { handleModal, setCurrent } from '../../store/modal/modal.slice'
 
-const ListItem = ({ id, image, filesize, timestamp, category, filename }) => {
+const ListItem = ({ imgId, ...props }) => {
   const dispatch = useDispatch()
-  const [openModal, setOpenModal] = useState(false)
-
-  const modalOpenHandle = () => {
-    setOpenModal(true)
-  }
-
-  const modalCloseHandle = () => {
-    setOpenModal(false)
-  }
-
   const handleDelete = () => {
-    dispatch(
-      deleteItem({
-        id,
-      })
-    )
+    dispatch(deleteItem({ id: props.id }))
+  }
+  const openModal = () => {
+    dispatch(setCurrent(imgId))
+    dispatch(handleModal())
   }
 
   return (
-    <Card
-      sx={{
-        width: 270,
-      }}
-    >
+    <Card sx={{ width: 270 }}>
       <div className="list-item">
         <CloseBtn handle={handleDelete} />
-        <div className="list-item__image-block">
-          <img
-            onClick={modalOpenHandle}
-            src={image ? PATH_TO_IMG + image : ''}
-          ></img>
+        <div className="list-item__image-block" onClick={openModal}>
+          <img src={props.image ? PATH_TO_IMG + props.image : ''}></img>
         </div>
         <CardContent>
           <Grid container>
             <ListItemDesc
-              category={category}
-              timestamp={timestamp}
-              filesize={filesize}
-              image={image}
-              filename={filename}
+              category={props.category}
+              timestamp={props.timestamp}
+              filesize={props.filesize}
+              image={props.image}
+              filename={props.filename}
             />
           </Grid>
         </CardContent>
       </div>
-      <ModalWindow
-        openModal={openModal}
-        image={PATH_TO_IMG + image}
-        handleClose={modalCloseHandle}
-      />
     </Card>
   )
 }

@@ -1,21 +1,13 @@
 import { useState } from 'react'
-import { PATH_TO_IMG } from '../../services/constants'
+import { useDispatch } from 'react-redux'
 import useDateTime from '../../hooks/useDataTime'
 import useFileSize from '../../hooks/useFileSize'
-import ModalWindow from '../shared/ModalWindow'
 import ThumbnailImage from '../shared/ThumbnailImage'
+import { handleModal, setCurrent } from '../../store/modal/modal.slice'
 
 const TreeValue = ({ item }) => {
-  const [openModal, setOpenModal] = useState(false)
   const [openThumbnail, setOpenThumbnail] = useState(false)
-
-  const modalOpenHandle = () => {
-    setOpenModal(true)
-  }
-
-  const modalCloseHandle = () => {
-    setOpenModal(false)
-  }
+  const dispatch = useDispatch()
 
   const handleFocus = () => {
     setOpenThumbnail(true)
@@ -23,6 +15,11 @@ const TreeValue = ({ item }) => {
 
   const handleBlur = () => {
     setOpenThumbnail(false)
+  }
+
+  const openModal = () => {
+    dispatch(setCurrent(item.id - 1))
+    dispatch(handleModal())
   }
 
   return (
@@ -44,21 +41,11 @@ const TreeValue = ({ item }) => {
           }}
         >
           image: {item.image}
-          <div
-            onClick={modalOpenHandle}
-            style={{
-              cursor: 'pointer',
-            }}
-          >
+          <div onClick={() => openModal()}>
             <ThumbnailImage image={item.image} isOpen={openThumbnail} />
           </div>
         </div>
       </li>
-      <ModalWindow
-        openModal={openModal}
-        image={PATH_TO_IMG + item.image}
-        handleClose={modalCloseHandle}
-      />
     </>
   )
 }

@@ -4,6 +4,7 @@ import listReducer from './list/list.slice'
 import dataReducer from './data/data.slice'
 import pageReducer from './page/page.slice'
 import viewReducer from './view/view.slice'
+import modalReducer from './modal/modal.slice'
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     list: listReducer,
     page: pageReducer,
     view: viewReducer,
+    modal: modalReducer,
   },
 })
